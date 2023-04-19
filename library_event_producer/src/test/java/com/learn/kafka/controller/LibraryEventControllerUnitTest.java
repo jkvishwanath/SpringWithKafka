@@ -41,7 +41,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
         LibraryEvent libraryEvent = LibraryEvent.builder()
                 .libraryEventId(1)
-                .book(null)
+                .book(book)
                 .build();
 
         String json = objectMapper.writeValueAsString(libraryEvent);

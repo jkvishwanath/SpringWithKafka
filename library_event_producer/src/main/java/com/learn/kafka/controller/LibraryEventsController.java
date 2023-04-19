@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.learn.kafka.domain.LibraryEvent;
 import com.learn.kafka.domain.LibraryEventType;
 import com.learn.kafka.producer.LibraryEventsProducer;
+
+
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,7 @@ public class LibraryEventsController {
     LibraryEventsProducer libraryEventsProducer;
 
     @PostMapping("/v1/libraryevent")
-    public ResponseEntity<LibraryEvent> postLibraryEvent( @RequestBody @Valid LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public ResponseEntity<LibraryEvent> postLibraryEvent( @Valid @RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
             log.info("before sendLibraryEvent");
             libraryEvent.setLibraryEventType(LibraryEventType.NEW);
             libraryEventsProducer.sendLibraryEvent(libraryEvent);
@@ -34,7 +36,7 @@ public class LibraryEventsController {
     }
 
     @PostMapping("/v1/libraryevent_synchronous")
-    public ResponseEntity<LibraryEvent> postLibraryEventSynchronous(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public ResponseEntity<LibraryEvent> postLibraryEventSynchronous( @Valid @RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
 /*          the below approach if  you want to call it in a synchronous way */
 
        //invoke kafka producer
@@ -48,7 +50,7 @@ public class LibraryEventsController {
 
     }
     @PostMapping("/v1/libraryevent_asynchronous")
-    public ResponseEntity<LibraryEvent> postLibraryEventASynchronous_Approach2(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public ResponseEntity<LibraryEvent> postLibraryEventASynchronous_Approach2( @Valid @RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
         //invoke kafka producer
         log.info("before sendLibraryEvent");
         libraryEvent.setLibraryEventType(LibraryEventType.NEW);
