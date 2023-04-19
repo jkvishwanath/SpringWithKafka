@@ -1,5 +1,8 @@
 package com.learn.kafka.domain;
 
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +17,8 @@ import org.apache.kafka.common.serialization.StringSerializer;
 public class LibraryEvent {
     private Integer libraryEventId;
     private LibraryEventType libraryEventType;
+    @NotNull
+    @Valid
     private Book book;
 
 }

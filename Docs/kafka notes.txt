@@ -1,11 +1,19 @@
-to list topics 
-PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-topics.bat --bootstrap-server=localhost:9092 localhost:2181 --list
+
+D:\kafkasw\kafka_2.13-3.4.0\bin>cd windows
+
+D:\kafkasw\kafka_2.13-3.4.0\bin\windows>zookeeper-server-start.bat ..\..\config\zookeeper.properties
 
 
 to start brokers
 D:\kafkasw\kafka_2.13-3.4.0\bin\windows>kafka-server-start.bat ..\..\config\server.properties
+or
+PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-server-start.bat ..\..\config\server.properties
 PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows>  .\kafka-server-start.bat ..\..\config\server_2.properties
 PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-server-start.bat ..\..\config\server_1.properties
+
+to list topics 
+PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-topics.bat --bootstrap-server=localhost:9092 localhost:2181 --list
+
 
 
 remove 

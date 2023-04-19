@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.learn.kafka.domain.LibraryEvent;
 import com.learn.kafka.domain.LibraryEventType;
 import com.learn.kafka.producer.LibraryEventsProducer;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class LibraryEventsController {
     LibraryEventsProducer libraryEventsProducer;
 
     @PostMapping("/v1/libraryevent")
-    public ResponseEntity<LibraryEvent> postLibraryEvent(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
+    public ResponseEntity<LibraryEvent> postLibraryEvent( @RequestBody @Valid LibraryEvent libraryEvent) throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
             log.info("before sendLibraryEvent");
             libraryEvent.setLibraryEventType(LibraryEventType.NEW);
             libraryEventsProducer.sendLibraryEvent(libraryEvent);
