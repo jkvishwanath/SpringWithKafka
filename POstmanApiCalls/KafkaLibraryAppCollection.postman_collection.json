@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "ca1a6bde-b1b4-435e-9432-77c8cb4f73b4",
+		"name": "KafkaLibraryAppCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KafkaProducerLibraryEventsAsyncApproach1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"libraryEventId\":1,\"book\":{\"bookId\":456,\"bookName\":\"Kafka Using Spring Boot\",\"bookAuthor\":\"Vissu1\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/libraryevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"libraryevent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KafkaProducerLibraryEventsAsyncApproach2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"libraryEventId\":1,\"book\":{\"bookId\":456,\"bookName\":\"Kafka Using Spring Boot\",\"bookAuthor\":\"Viswanath\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/libraryevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"libraryevent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KafkaProducerLibraryEventsSyncWay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"libraryEventId\":1,\"book\":{\"bookId\":456,\"bookName\":\"Kafka Using Spring Boot\",\"bookAuthor\":\"Viswanath\"}}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/libraryevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"libraryevent"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

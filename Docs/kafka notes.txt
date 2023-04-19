@@ -1,0 +1,34 @@
+to list topics 
+PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-topics.bat --bootstrap-server=localhost:9092 localhost:2181 --list
+
+
+to start brokers
+D:\kafkasw\kafka_2.13-3.4.0\bin\windows>kafka-server-start.bat ..\..\config\server.properties
+PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows>  .\kafka-server-start.bat ..\..\config\server_2.properties
+PS D:\kafkasw\kafka_2.13-3.4.0\bin\windows> .\kafka-server-start.bat ..\..\config\server_1.properties
+
+
+remove 
+
+spring:
+  profiles: 
+	active : local
+from spring 2.4 it is not required. change ur applicatiom.yml to application-local.yml
+
+
+
+
+https://github.com/dilipsundarraj1/kafka-for-developers-using-spring-boot/blob/main/SetUpKafka.md
+
+
+https://www.udemy.com/course/apache-kafka-for-developers-using-springboot/learn/lecture/17471360#overview
+
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic library-events
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic library-events --from-beginning
+
+
+java.lang.ClassCastException: class java.util.concurrent.CompletableFuture cannot
+ be cast to class org.springframework.util.concurrent.ListenableFuture (java.util.concurrent.CompletableFuture
+ is in module java.base of loader 'bootstrap'; org.springframework.util.concurrent.ListenableFuture is in unnamed module of loader 'app')
+
